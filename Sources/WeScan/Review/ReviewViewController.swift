@@ -71,8 +71,7 @@ final class ReviewViewController: UIViewController {
         enhancedImageIsAvailable = results.enhancedScan != nil
 
         setupViews()
-        setupToolbar()
-        setupConstraints()
+        //setupConstraints()
 
         title = NSLocalizedString("wescan.review.title",
                                   tableName: nil,
@@ -101,11 +100,6 @@ final class ReviewViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(imageView)
-    }
-
-    private func setupToolbar() {
-        return
-
     }
 
     private func setupConstraints() {
