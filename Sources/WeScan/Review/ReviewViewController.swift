@@ -35,14 +35,14 @@ final class ReviewViewController: UIViewController {
             compatibleWith: nil
         )
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(toggleEnhancedImage))
-        button.tintColor = .black
+        button.tintColor = .white
         return button
     }()
 
     private lazy var rotateButton: UIBarButtonItem = {
         let image = UIImage(systemName: "rotate.right", named: "rotate", in: Bundle(for: ScannerViewController.self), compatibleWith: nil)
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(rotateImage))
-        button.tintColor = .black
+        button.tintColor = .white
         return button
     }()
 
@@ -71,6 +71,7 @@ final class ReviewViewController: UIViewController {
         enhancedImageIsAvailable = results.enhancedScan != nil
 
         setupViews()
+        setupToolbar()
         setupConstraints()
 
         title = NSLocalizedString("wescan.review.title",
@@ -100,6 +101,15 @@ final class ReviewViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(imageView)
+    }
+
+    private func setupToolbar() {
+       return
+
+        navigationController?.toolbar.barTintColor = .black
+
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbarItems = [flexibleSpace, rotateButton, fixedSpace]
     }
 
     private func setupConstraints() {
