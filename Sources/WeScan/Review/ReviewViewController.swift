@@ -71,7 +71,6 @@ final class ReviewViewController: UIViewController {
         enhancedImageIsAvailable = results.enhancedScan != nil
 
         setupViews()
-        setupToolbar()
         setupConstraints()
 
         title = NSLocalizedString("wescan.review.title",
@@ -101,16 +100,6 @@ final class ReviewViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(imageView)
-    }
-
-    private func setupToolbar() {
-        guard enhancedImageIsAvailable else { return }
-
-        navigationController?.toolbar.barStyle = .black
-
-        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbarItems = [fixedSpace, enhanceButton, flexibleSpace, rotateButton, fixedSpace]
     }
 
     private func setupConstraints() {
