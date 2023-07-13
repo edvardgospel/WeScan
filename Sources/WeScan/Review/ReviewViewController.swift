@@ -104,7 +104,7 @@ final class ReviewViewController: UIViewController {
     }
 
     private func setupToolbar() {
-
+        return
         navigationController?.toolbar.barTintColor = .black
 
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
