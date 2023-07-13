@@ -71,7 +71,7 @@ final class ReviewViewController: UIViewController {
         enhancedImageIsAvailable = results.enhancedScan != nil
 
         setupViews()
-        //setupConstraints()
+        setupConstraints()
 
         title = NSLocalizedString("wescan.review.title",
                                   tableName: nil,
@@ -104,24 +104,12 @@ final class ReviewViewController: UIViewController {
 
     private func setupConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
-
-        var imageViewConstraints: [NSLayoutConstraint] = []
-        if #available(iOS 11.0, *) {
-            imageViewConstraints = [
-                view.safeAreaLayoutGuide.topAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.topAnchor),
-                view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.trailingAnchor),
-                view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.bottomAnchor),
-                view.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.leadingAnchor)
-            ]
-        } else {
-            imageViewConstraints = [
-                view.topAnchor.constraint(equalTo: imageView.topAnchor),
-                view.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
-                view.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
-                view.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
-            ]
-        }
-
+        let imageViewConstraints = [
+            view.topAnchor.constraint(equalTo: imageView.topAnchor),
+            view.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
+            view.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
+        ]
         NSLayoutConstraint.activate(imageViewConstraints)
     }
 
