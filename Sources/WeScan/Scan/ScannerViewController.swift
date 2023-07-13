@@ -94,7 +94,7 @@ public final class ScannerViewController: UIViewController {
         captureSessionManager?.start()
         UIApplication.shared.isIdleTimerDisabled = true
 
-        navigationController?.navigationBar.barStyle = .blackTranslucent
+        navigationController?.navigationBar.barStyle = .black
     }
 
     override public func viewDidLayoutSubviews() {
